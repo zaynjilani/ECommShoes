@@ -1,0 +1,110 @@
+<div class="container pdp-loading" *ngIf="loading">
+  <app-loading variant="spinner"></app-loading>
+</div>
+
+<div class="container" *ngIf="!loading && notFound">
+  <app-empty-state icon="error" title="Product not found" message="This product may have been removed or the link is incorrect.">
+    <a routerLink="/products" class="btn btn-primary">Browse all products</a>
+  </app-empty-state>
+</div>
+
+<ng-container *ngIf="!loading && product as p">
+  <section class="container breadcrumbs">
+    <a routerLink="/">Home</a>
+    <span>/</span>
+    <a [routerLink]="['/products']" [queryParams]="{ category: p.category }">{{ p.category }}</a>
+    <span>/</span>
+    <span class="current">{{ p.name }}</span>
+  </section>
+
+  <section class="container pdp">
+    <div class="pdp-gallery">
+      <div class="pdp-gallery__main">
+        <img [src]="selectedImage" [alt]="p.name" />
+        <span class="tag tag-new pdp-badge" *ngIf="p.isNewArrival">New Arrival</span>
+        <span class="tag tag-sale pdp-badge pdp-badge--sale" *ngIf="discountPercent as pct">-{{ pct }}% Off</span>
+      </div>
+      <div class="pdp-gallery__thumbs" *ngIf="gallery.length > 1">
+        <button
+          type="button"
+          *ngFor="let img of gallery"
+          [class.is-active]="img === selectedImage"
+          (click)="selectImage(img)"
+        >
+          <img [src]="img" [alt]="p.name" />
+        </button>
+      </div>
+    </div>
+
+    <div class="pdp-info">
+      <span class="pdp-category">{{ p.category }}</span>
+      <h1>{{ p.name }}</h1>
+
+      <div class="pdp-rating" *ngIf="p.rating">
+        <span class="stars">★★★★★</span>
+        <span class="rating-value">{{ p.rating }}</span>
+        <span class="review-count">({{ p.reviewCount }} reviews)</span>
+      </div>
+
+      <div class="pdp-price-row">
+        <span class="pdp-price">{{ currency }} {{ p.price | number }}</span>
+        <span class="pdp-price-compare" *ngIf="p.compareAtPrice">{{ currency }} {{ p.compareAtPrice | number }}</span>
+      </div>
+
+      <p class="pdp-description">{{ p.description }}</p>
+
+      <div class="pdp-option-group">
+        <h4>Size</h4>
+        <div class="size-chip-grid">
+          <button
+            type="button"
+            class="size-chip"
+            *ngFor="let s of p.size"
+            [class.is-active]="selectedSize === s"
+            (click)="selectSize(s)"
+          >{{ s }}</button>
+        </div>
+      </div>
+
+      <div class="pdp-option-group">
+        <h4>Quantity</h4>
+        <app-quantity-selector [quantity]="quantity" [max]="p.stock ?? 20" (quantityChange)="setQuantity($event)"></app-quantity-selector>
+        <span class="stock-note" *ngIf="p.stock">{{ p.stock }} in stock</span>
+      </div>
+
+      <div class="pdp-actions">
+        <button type="button" class="btn btn-outline btn-lg" (click)="addToCart()">Add to Cart</button>
+        <button type="button" class="btn btn-primary btn-lg" (click)="buyNow()">Buy Now</button>
+        <button
+          type="button"
+          class="wishlist-btn-lg"
+          [class.is-active]="isWishlisted"
+          (click)="toggleWishlist()"
+          aria-label="Toggle wishlist"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" [attr.fill]="isWishlisted ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2">
+            <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="pdp-perks">
+        <li>Free delivery on orders over {{ currency }} 10,000</li>
+        <li>7-day easy exchange</li>
+        <li>Order easily via WhatsApp checkout</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section container" *ngIf="relatedProducts.length">
+    <div class="section-head">
+      <div class="section-head__text">
+        <p class="eyebrow">You may also like</p>
+        <h2>More from {{ p.category }}</h2>
+      </div>
+    </div>
+    <div class="product-grid">
+      <app-product-card *ngFor="let rp of relatedProducts" [product]="rp"></app-product-card>
+    </div>
+  </section>
+</ng-container>

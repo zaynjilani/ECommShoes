@@ -1,0 +1,91 @@
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow">Your bag</p>
+    <h1>Shopping Cart</h1>
+  </div>
+</section>
+
+<section class="container cart-layout" *ngIf="(items$ | async) as items">
+  <ng-container *ngIf="items.length; else emptyCart">
+    <div class="cart-items">
+      <div class="cart-items__head">
+        <span>{{ items.length }} {{ items.length === 1 ? 'item' : 'items' }} in your cart</span>
+        <button type="button" class="btn-ghost-link" (click)="clearCart()">Clear cart</button>
+      </div>
+
+      <div class="cart-item" *ngFor="let item of items">
+        <img [src]="item.imageUrl" [alt]="item.name" class="cart-item__image" />
+
+        <div class="cart-item__details">
+          <span class="cart-item__category">{{ item.category }}</span>
+          <h3>{{ item.name }}</h3>
+          <span class="cart-item__size">Size: {{ item.size }}</span>
+          <span class="cart-item__unit-price mobile-only">{{ currency }} {{ item.unitPrice | number }} each</span>
+        </div>
+
+        <div class="cart-item__qty">
+          <app-quantity-selector
+            [quantity]="item.quantity"
+            size="sm"
+            (quantityChange)="updateQuantity(item.productId, item.size, $event)"
+          ></app-quantity-selector>
+        </div>
+
+        <div class="cart-item__price">
+          <span class="cart-item__subtotal">{{ currency }} {{ item.unitPrice * item.quantity | number }}</span>
+          <span class="cart-item__unit-price">{{ currency }} {{ item.unitPrice | number }} each</span>
+        </div>
+
+        <button
+          type="button"
+          class="cart-item__remove"
+          (click)="removeItem(item.productId, item.size, item.name)"
+          aria-label="Remove item"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+            <path d="M10 11v6"></path>
+            <path d="M14 11v6"></path>
+            <path d="M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"></path>
+          </svg>
+        </button>
+      </div>
+
+      <a routerLink="/products" class="continue-shopping">← Continue shopping</a>
+    </div>
+
+    <aside class="cart-summary" *ngIf="(totals$ | async) as totals">
+      <h3>Order Summary</h3>
+
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span>{{ currency }} {{ totals.subtotal | number }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Delivery</span>
+        <span *ngIf="totals.deliveryCharge > 0">{{ currency }} {{ totals.deliveryCharge | number }}</span>
+        <span *ngIf="totals.deliveryCharge === 0" class="free-tag">FREE</span>
+      </div>
+
+      <p class="free-delivery-note" *ngIf="totals.deliveryCharge > 0">
+        Add {{ currency }} {{ freeDeliveryThreshold - totals.subtotal | number }} more for free delivery
+      </p>
+
+      <div class="summary-row summary-row--total">
+        <span>Total</span>
+        <span>{{ currency }} {{ totals.total | number }}</span>
+      </div>
+
+      <a routerLink="/checkout" class="btn btn-primary btn-lg btn-block">Proceed to Checkout</a>
+    </aside>
+  </ng-container>
+
+  <ng-template #emptyCart>
+    <div class="empty-cart-wrap">
+      <app-empty-state icon="cart" title="Your cart is empty" message="Looks like you haven't added anything yet. Start exploring our collection.">
+        <a routerLink="/products" class="btn btn-primary">Start Shopping</a>
+      </app-empty-state>
+    </div>
+  </ng-template>
+</section>

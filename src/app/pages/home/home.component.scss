@@ -1,0 +1,250 @@
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  height: 88vh;
+  min-height: 560px;
+  max-height: 820px;
+  overflow: hidden;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  display: flex;
+  align-items: center;
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+}
+
+.hero__inner {
+  color: #fff;
+  max-width: 640px;
+}
+
+.hero__logo {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 24px;
+}
+
+.hero__eyebrow {
+  color: var(--color-brass-light);
+  margin-bottom: 12px;
+}
+
+.hero__heading {
+  font-size: clamp(2.4rem, 5.4vw, 4.2rem);
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.hero__desc {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.05rem;
+  max-width: 46ch;
+  margin-bottom: 30px;
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(23, 21, 18, 0.25);
+  color: #fff;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+  z-index: 3;
+}
+
+.hero__nav:hover {
+  background: rgba(23, 21, 18, 0.55);
+}
+
+.hero__nav--prev {
+  left: 24px;
+}
+
+.hero__nav--next {
+  right: 24px;
+}
+
+.hero__dots {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.hero__dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.45);
+  transition: background-color 0.2s ease, width 0.2s ease;
+}
+
+.hero__dots button.is-active {
+  background: #fff;
+  width: 22px;
+  border-radius: 4px;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    height: 76vh;
+    min-height: 480px;
+  }
+
+  .hero__nav {
+    display: none;
+  }
+}
+
+/* ---------- Category grid ---------- */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+@media (max-width: 900px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .category-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+}
+
+/* ---------- Product grid ---------- */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 24px;
+}
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 14px;
+  }
+}
+
+/* ---------- Promo banner ---------- */
+.promo-banner {
+  background: var(--color-ink);
+  color: #fff;
+  margin: 20px 0;
+}
+
+.promo-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 56px 24px;
+}
+
+.promo-banner h2 {
+  color: #fff;
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  max-width: 20ch;
+}
+
+.promo-banner__desc {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 46ch;
+  margin: 0;
+}
+
+/* ---------- Why us ---------- */
+.why-us {
+  background: var(--color-bg-alt);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+@media (max-width: 900px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.benefit-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: 26px 22px;
+}
+
+.benefit-card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--color-brass-light);
+  color: var(--color-brass-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.benefit-card h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.benefit-card p {
+  font-size: 0.88rem;
+  margin: 0;
+}

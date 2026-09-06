@@ -1,0 +1,404 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Oxford Shirt",
+    "price": 4500,
+    "compareAtPrice": 5500,
+    "size": ["S", "M", "L", "XL"],
+    "category": "Men",
+    "imageUrl": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "A tailored classic oxford shirt woven from breathable long-staple cotton. Perfect for the office or a smart-casual evening out, featuring a structured collar and mother-of-pearl buttons.",
+    "isNewArrival": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "rating": 4.6,
+    "reviewCount": 128,
+    "stock": 42,
+    "createdAt": "2026-06-01"
+  },
+  {
+    "id": 2,
+    "name": "Premium Cotton T-Shirt",
+    "price": 2500,
+    "compareAtPrice": null,
+    "size": ["S", "M", "L", "XL", "XXL"],
+    "category": "Men",
+    "imageUrl": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Premium quality 220gsm combed cotton t-shirt with a relaxed modern fit. Pre-shrunk and garment-dyed for a soft, lived-in feel that lasts wash after wash.",
+    "isNewArrival": true,
+    "isFeatured": true,
+    "isOnSale": false,
+    "rating": 4.8,
+    "reviewCount": 302,
+    "stock": 120,
+    "createdAt": "2026-08-10"
+  },
+  {
+    "id": 3,
+    "name": "Slim Fit Chino Pants",
+    "price": 5200,
+    "compareAtPrice": null,
+    "size": ["30", "32", "34", "36", "38"],
+    "category": "Men",
+    "imageUrl": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Modern slim-fit chinos in stretch cotton twill that move with you. A wardrobe staple that pairs effortlessly with everything from sneakers to loafers.",
+    "isNewArrival": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "rating": 4.4,
+    "reviewCount": 76,
+    "stock": 58,
+    "createdAt": "2026-05-14"
+  },
+  {
+    "id": 4,
+    "name": "Denim Jacket",
+    "price": 7800,
+    "compareAtPrice": 9000,
+    "size": ["S", "M", "L", "XL"],
+    "category": "Men",
+    "imageUrl": "https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1543087903-1ac2ec7aa8c5?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "A rugged yet refined denim jacket cut from heavyweight rigid denim that softens beautifully over time. Features classic chest pockets and button cuffs.",
+    "isNewArrival": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "rating": 4.7,
+    "reviewCount": 94,
+    "stock": 25,
+    "createdAt": "2026-04-22"
+  },
+  {
+    "id": 5,
+    "name": "Floral Wrap Dress",
+    "price": 6200,
+    "compareAtPrice": null,
+    "size": ["XS", "S", "M", "L"],
+    "category": "Women",
+    "imageUrl": "https://images.unsplash.com/photo-1612336307429-8a898d10e223?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1612336307429-8a898d10e223?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "An effortlessly elegant wrap dress in a soft floral print. Cinched waist tie flatters every silhouette — perfect for garden parties and summer dinners.",
+    "isNewArrival": true,
+    "isFeatured": true,
+    "isOnSale": false,
+    "rating": 4.9,
+    "reviewCount": 211,
+    "stock": 37,
+    "createdAt": "2026-08-01"
+  },
+  {
+    "id": 6,
+    "name": "High-Waist Wide Leg Trousers",
+    "price": 5800,
+    "compareAtPrice": null,
+    "size": ["XS", "S", "M", "L", "XL"],
+    "category": "Women",
+    "imageUrl": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Flowing wide-leg trousers with a flattering high waist and crisp front pleat. Tailored from a fluid drape fabric for all-day comfort and elevated style.",
+    "isNewArrival": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "rating": 4.5,
+    "reviewCount": 63,
+    "stock": 44,
+    "createdAt": "2026-03-18"
+  },
+  {
+    "id": 7,
+    "name": "Silk Blouse",
+    "price": 6900,
+    "compareAtPrice": 8200,
+    "size": ["XS", "S", "M", "L"],
+    "category": "Women",
+    "imageUrl": "https://images.unsplash.com/photo-1551803091-e20673f15770?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1551803091-e20673f15770?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "A luxuriously soft silk blouse with a relaxed drape and mother-of-pearl buttons. Effortlessly transitions from boardroom to evening.",
+    "isNewArrival": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "rating": 4.7,
+    "reviewCount": 145,
+    "stock": 29,
+    "createdAt": "2026-02-27"
+  },
+  {
+    "id": 8,
+    "name": "Knit Sweater Dress",
+    "price": 7200,
+    "compareAtPrice": null,
+    "size": ["S", "M", "L"],
+    "category": "Women",
+    "imageUrl": "https://images.unsplash.com/photo-1495385794356-15371f348c31?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1495385794356-15371f348c31?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Cosy ribbed-knit sweater dress that skims the body for a chic, polished look. Ideal layered with boots and a long coat for cooler days.",
+    "isNewArrival": true,
+    "isFeatured": false,
+    "isOnSale": false,
+    "rating": 4.6,
+    "reviewCount": 87,
+    "stock": 33,
+    "createdAt": "2026-07-30"
+  },
+  {
+    "id": 9,
+    "name": "Kids Graphic Hoodie",
+    "price": 3200,
+    "compareAtPrice": null,
+    "size": ["3-4Y", "5-6Y", "7-8Y", "9-10Y"],
+    "category": "Kids",
+    "imageUrl": "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Super-soft fleece hoodie with a playful graphic print. Built for adventure with a durable, machine-washable finish that stays vibrant wash after wash.",
+    "isNewArrival": true,
+    "isFeatured": true,
+    "isOnSale": false,
+    "rating": 4.8,
+    "reviewCount": 56,
+    "stock": 70,
+    "createdAt": "2026-08-15"
+  },
+  {
+    "id": 10,
+    "name": "Kids Denim Overalls",
+    "price": 3900,
+    "compareAtPrice": 4500,
+    "size": ["2-3Y", "4-5Y", "6-7Y"],
+    "category": "Kids",
+    "imageUrl": "https://images.unsplash.com/photo-1522771930-78848d9293e8?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1522771930-78848d9293e8?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Adorable durable denim overalls with adjustable straps and roomy pockets, built to keep up with playground adventures.",
+    "isNewArrival": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "rating": 4.5,
+    "reviewCount": 39,
+    "stock": 48,
+    "createdAt": "2026-01-10"
+  },
+  {
+    "id": 11,
+    "name": "Kids Cotton Pajama Set",
+    "price": 2800,
+    "compareAtPrice": null,
+    "size": ["3-4Y", "5-6Y", "7-8Y", "9-10Y"],
+    "category": "Kids",
+    "imageUrl": "https://images.unsplash.com/photo-1519457851430-6a91775c8a1a?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1519457851430-6a91775c8a1a?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Breathable 100% cotton pajama set in playful prints, designed for a comfortable night's sleep with tag-free necklines.",
+    "isNewArrival": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "rating": 4.4,
+    "reviewCount": 22,
+    "stock": 65,
+    "createdAt": "2026-03-05"
+  },
+  {
+    "id": 12,
+    "name": "Classic Leather Sneakers",
+    "price": 8900,
+    "compareAtPrice": null,
+    "size": ["39", "40", "41", "42", "43", "44"],
+    "category": "Shoes",
+    "imageUrl": "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=1200&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Timeless leather sneakers with a cushioned sole and minimalist silhouette — an everyday essential that pairs with almost anything in your wardrobe.",
+    "isNewArrival": true,
+    "isFeatured": true,
+    "isOnSale": false,
+    "rating": 4.9,
+    "reviewCount": 412,
+    "stock": 61,
+    "createdAt": "2026-08-05"
+  },
+  {
+    "id": 13,
+    "name": "Running Performance Shoes",
+    "price": 10500,
+    "compareAtPrice": 12500,
+    "size": ["39", "40", "41", "42", "43"],
+    "category": "Shoes",
+    "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Engineered for performance with responsive cushioning and a breathable knit upper — built to go the distance, whichever way you run.",
+    "isNewArrival": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "rating": 4.7,
+    "reviewCount": 198,
+    "stock": 34,
+    "createdAt": "2026-04-02"
+  },
+  {
+    "id": 14,
+    "name": "Suede Chelsea Boots",
+    "price": 11800,
+    "compareAtPrice": null,
+    "size": ["40", "41", "42", "43", "44"],
+    "category": "Shoes",
+    "imageUrl": "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1520639888713-7851133b1ed0?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Handcrafted suede Chelsea boots with elastic side panels and a stacked heel — a refined finishing touch for tailored or casual looks alike.",
+    "isNewArrival": false,
+    "isFeatured": false,
+    "isOnSale": false,
+    "rating": 4.6,
+    "reviewCount": 71,
+    "stock": 19,
+    "createdAt": "2026-02-11"
+  },
+  {
+    "id": 15,
+    "name": "Women's Strappy Heels",
+    "price": 7400,
+    "compareAtPrice": null,
+    "size": ["36", "37", "38", "39", "40"],
+    "category": "Shoes",
+    "imageUrl": "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Elegant strappy heels with a comfort-padded footbed, designed to carry you gracefully from cocktail hour to the dance floor.",
+    "isNewArrival": true,
+    "isFeatured": false,
+    "isOnSale": false,
+    "rating": 4.5,
+    "reviewCount": 58,
+    "stock": 27,
+    "createdAt": "2026-07-19"
+  },
+  {
+    "id": 16,
+    "name": "Leather Crossbody Bag",
+    "price": 6500,
+    "compareAtPrice": 7500,
+    "size": ["One Size"],
+    "category": "Accessories",
+    "imageUrl": "https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1591561954557-26941169b49e?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "A compact genuine-leather crossbody bag with an adjustable strap and gold-tone hardware — roomy enough for the essentials, elegant enough for everywhere.",
+    "isNewArrival": false,
+    "isFeatured": true,
+    "isOnSale": true,
+    "rating": 4.8,
+    "reviewCount": 163,
+    "stock": 40,
+    "createdAt": "2026-05-28"
+  },
+  {
+    "id": 17,
+    "name": "Aviator Sunglasses",
+    "price": 3400,
+    "compareAtPrice": null,
+    "size": ["One Size"],
+    "category": "Accessories",
+    "imageUrl": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1572635196237-14b3f281503f?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "Classic aviator sunglasses with polarised UV400 lenses and a lightweight metal frame — timeless protection with everyday style.",
+    "isNewArrival": true,
+    "isFeatured": false,
+    "isOnSale": false,
+    "rating": 4.6,
+    "reviewCount": 89,
+    "stock": 88,
+    "createdAt": "2026-08-20"
+  },
+  {
+    "id": 18,
+    "name": "Minimalist Leather Watch",
+    "price": 8200,
+    "compareAtPrice": null,
+    "size": ["One Size"],
+    "category": "Accessories",
+    "imageUrl": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1524805444758-089113d48a6d?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "A clean-dial minimalist watch with a genuine leather strap and scratch-resistant sapphire-coated glass — quietly refined for daily wear.",
+    "isNewArrival": false,
+    "isFeatured": true,
+    "isOnSale": false,
+    "rating": 4.9,
+    "reviewCount": 234,
+    "stock": 52,
+    "createdAt": "2026-06-25"
+  },
+  {
+    "id": 19,
+    "name": "Cashmere Blend Scarf",
+    "price": 4200,
+    "compareAtPrice": 5000,
+    "size": ["One Size"],
+    "category": "Accessories",
+    "imageUrl": "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "An indulgently soft cashmere-blend scarf that adds warmth and texture to any outfit — the finishing touch for cool-weather layering.",
+    "isNewArrival": false,
+    "isFeatured": false,
+    "isOnSale": true,
+    "rating": 4.7,
+    "reviewCount": 47,
+    "stock": 66,
+    "createdAt": "2026-01-30"
+  },
+  {
+    "id": 20,
+    "name": "Quilted Puffer Jacket",
+    "price": 9800,
+    "compareAtPrice": null,
+    "size": ["S", "M", "L", "XL"],
+    "category": "Women",
+    "imageUrl": "https://images.unsplash.com/photo-1544923246-77307dd654cb?q=80&w=800&auto=format&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1544923246-77307dd654cb?q=80&w=1200&auto=format&fit=crop"
+    ],
+    "description": "A lightweight yet cosy quilted puffer jacket with a water-resistant shell and packable design — engineered to keep the chill out in style.",
+    "isNewArrival": true,
+    "isFeatured": true,
+    "isOnSale": false,
+    "rating": 4.8,
+    "reviewCount": 176,
+    "stock": 31,
+    "createdAt": "2026-08-22"
+  }
+]

@@ -1,0 +1,69 @@
+<footer class="site-footer">
+  <div class="newsletter">
+    <div class="container newsletter__inner">
+      <div class="newsletter__text">
+        <h2>{{ config.newsletterHeading }}</h2>
+        <p>{{ config.newsletterSubheading }}</p>
+      </div>
+      <form class="newsletter__form" (ngSubmit)="subscribe()">
+        <input
+          type="email"
+          class="input"
+          placeholder="Enter your email"
+          [(ngModel)]="newsletterEmail"
+          name="newsletterEmail"
+          aria-label="Email address"
+        />
+        <button type="submit" class="btn btn-accent">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="container footer-grid">
+    <div class="footer-col footer-brand">
+      <a routerLink="/" class="brand">
+        <span class="brand-mark">{{ config.logoText.charAt(0) }}</span>
+        <span class="brand-name">{{ config.logoText }}</span>
+      </a>
+      <p>{{ config.tagline }}. Premium clothing, shoes and accessories for men, women and kids.</p>
+      <div class="socials">
+        <a *ngFor="let s of config.socialLinks" [href]="s.url" target="_blank" rel="noopener" [attr.aria-label]="s.label" class="social-btn">
+          {{ s.label.charAt(0) }}
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a routerLink="/products">All Products</a></li>
+        <li><a [routerLink]="['/products']" [queryParams]="{ category: 'New Arrivals' }">New Arrivals</a></li>
+        <li><a [routerLink]="['/products']" [queryParams]="{ category: 'Sale' }">Sale</a></li>
+        <li><a routerLink="/categories">Categories</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a routerLink="/about">About Us</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+        <li><a routerLink="/cart">Your Cart</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <ul class="contact-list">
+        <li>{{ config.address }}</li>
+        <li>{{ config.supportPhoneDisplay }}</li>
+        <li>{{ config.supportEmail }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>&copy; {{ year }} {{ config.companyName }}. All rights reserved.</p>
+    <p>Crafted with care for modern wardrobes.</p>
+  </div>
+</footer>

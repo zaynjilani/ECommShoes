@@ -1,0 +1,16 @@
+<div class="confirm-overlay" *ngIf="(state$ | async) as state" [class.is-visible]="state.visible">
+  <div class="confirm-dialog card" role="alertdialog" aria-modal="true" *ngIf="state.visible">
+    <h3>{{ state.title }}</h3>
+    <p>{{ state.message }}</p>
+    <div class="confirm-actions">
+      <button type="button" class="btn btn-ghost" (click)="respond(false)">{{ state.cancelLabel }}</button>
+      <button
+        type="button"
+        class="btn"
+        [class.btn-danger]="state.danger"
+        [class.btn-primary]="!state.danger"
+        (click)="respond(true)"
+      >{{ state.confirmLabel }}</button>
+    </div>
+  </div>
+</div>

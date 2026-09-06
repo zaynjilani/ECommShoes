@@ -1,0 +1,15 @@
+<div class="toast-stack" aria-live="polite">
+  <div
+    class="toast"
+    *ngFor="let toast of (toasts$ | async)"
+    [class.toast--success]="toast.type === 'success'"
+    [class.toast--error]="toast.type === 'error'"
+    [class.toast--info]="toast.type === 'info'"
+  >
+    <span class="toast__icon" *ngIf="toast.type === 'success'">✓</span>
+    <span class="toast__icon" *ngIf="toast.type === 'error'">!</span>
+    <span class="toast__icon" *ngIf="toast.type === 'info'">i</span>
+    <span class="toast__message">{{ toast.message }}</span>
+    <button type="button" class="toast__close" (click)="dismiss(toast.id)" aria-label="Dismiss notification">×</button>
+  </div>
+</div>

@@ -1,0 +1,140 @@
+.success-page {
+  padding: 60px 24px 90px;
+  display: flex;
+  justify-content: center;
+}
+
+.success-card {
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+}
+
+.success-icon {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: var(--color-sage-light);
+  color: var(--color-sage);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.success-card h1 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 10px;
+}
+
+.success-sub {
+  color: var(--color-ink-muted);
+  max-width: 46ch;
+  margin: 0 auto 22px;
+}
+
+.order-reference {
+  display: inline-block;
+  background: var(--color-brass-light);
+  color: var(--color-brass-dark);
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 30px;
+  letter-spacing: 0.02em;
+}
+
+.order-summary-card {
+  text-align: left;
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  margin-bottom: 24px;
+
+  h3 {
+    font-size: 1rem;
+    margin-bottom: 14px;
+  }
+}
+
+.summary-line {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 0;
+  font-size: 0.9rem;
+}
+
+.summary-line__num {
+  color: var(--color-ink-muted);
+  font-weight: 700;
+}
+
+.summary-line__name {
+  flex: 1;
+
+  em {
+    color: var(--color-ink-muted);
+    font-style: normal;
+    font-size: 0.82rem;
+  }
+}
+
+.summary-line__price {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.summary-totals {
+  margin-top: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-hairline);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--color-ink-soft);
+  padding: 5px 0;
+}
+
+.summary-row--total {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-ink);
+  border-top: 1px solid var(--color-hairline);
+  margin-top: 6px;
+  padding-top: 10px;
+}
+
+.success-customer {
+  text-align: left;
+  margin-bottom: 30px;
+
+  h4 {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  p {
+    font-size: 0.88rem;
+    margin: 0 0 4px;
+  }
+}
+
+.success-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.success-card--empty {
+  padding: 40px 0;
+
+  p {
+    margin-bottom: 24px;
+  }
+}

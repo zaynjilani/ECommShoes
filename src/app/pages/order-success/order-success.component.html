@@ -1,0 +1,63 @@
+<section class="success-page container">
+  <div class="success-card" *ngIf="order; else noOrder">
+    <div class="success-icon">
+      <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.4">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+
+    <p class="eyebrow">Order initiated</p>
+    <h1>Your order is on its way to WhatsApp!</h1>
+    <p class="success-sub">
+      We've opened WhatsApp with your order details pre-filled. Just hit send to confirm your order with our team.
+    </p>
+
+    <div class="order-reference">
+      Order {{ order.reference }}
+    </div>
+
+    <div class="order-summary-card">
+      <h3>Order Summary</h3>
+
+      <div class="summary-line" *ngFor="let item of order.items; let i = index">
+        <span class="summary-line__num">{{ i + 1 }}.</span>
+        <span class="summary-line__name">{{ item.name }} <em>({{ item.size }} × {{ item.quantity }})</em></span>
+        <span class="summary-line__price">{{ currency }} {{ subtotalFor(item.unitPrice, item.quantity) | number }}</span>
+      </div>
+
+      <div class="summary-totals">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span>{{ currency }} {{ order.subtotal | number }}</span>
+        </div>
+        <div class="summary-row">
+          <span>Delivery</span>
+          <span>{{ order.deliveryCharge > 0 ? (currency + ' ' + (order.deliveryCharge | number)) : 'FREE' }}</span>
+        </div>
+        <div class="summary-row summary-row--total">
+          <span>Total</span>
+          <span>{{ currency }} {{ order.total | number }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="success-customer">
+      <h4>Delivering to</h4>
+      <p>{{ order.customer.name }} · {{ order.customer.whatsapp }}</p>
+      <p>{{ order.customer.address }}, {{ order.customer.city }}</p>
+    </div>
+
+    <div class="success-actions">
+      <a routerLink="/products" class="btn btn-primary btn-lg">Continue Shopping</a>
+      <a routerLink="/" class="btn btn-outline btn-lg">Back to Home</a>
+    </div>
+  </div>
+
+  <ng-template #noOrder>
+    <div class="success-card success-card--empty">
+      <h1>No recent order found</h1>
+      <p>We couldn't find a recent order to display. Start shopping to place a new one.</p>
+      <a routerLink="/products" class="btn btn-primary btn-lg">Browse Products</a>
+    </div>
+  </ng-template>
+</section>

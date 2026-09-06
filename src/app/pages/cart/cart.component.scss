@@ -1,0 +1,230 @@
+.page-header {
+  background: var(--color-bg-alt);
+  padding: 40px 0;
+
+  h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+  }
+}
+
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 40px;
+  padding: 40px 24px 80px;
+  align-items: start;
+}
+
+.cart-items__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+}
+
+.btn-ghost-link {
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-rust);
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 90px 1fr auto auto auto;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.cart-item__image {
+  width: 90px;
+  height: 108px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg-alt);
+}
+
+.cart-item__details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+
+  h3 {
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.cart-item__category {
+  font-size: 0.72rem;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cart-item__size {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.cart-item__price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.cart-item__subtotal {
+  font-weight: 700;
+}
+
+.cart-item__unit-price {
+  font-size: 0.78rem;
+  color: var(--color-ink-muted);
+}
+
+.cart-item__unit-price.mobile-only {
+  display: none;
+}
+
+.cart-item__remove {
+  background: transparent;
+  border: none;
+  color: var(--color-ink-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.cart-item__remove:hover {
+  background: var(--color-rust-light);
+  color: var(--color-rust);
+}
+
+.continue-shopping {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-ink-soft);
+}
+
+.continue-shopping:hover {
+  color: var(--color-ink);
+}
+
+.cart-summary {
+  position: sticky;
+  top: calc(var(--header-height) + 20px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-md);
+  padding: 26px;
+
+  h3 {
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+  }
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 0;
+  font-size: 0.92rem;
+  color: var(--color-ink-soft);
+}
+
+.free-tag {
+  color: var(--color-sage);
+  font-weight: 700;
+}
+
+.free-delivery-note {
+  font-size: 0.78rem;
+  color: var(--color-ink-muted);
+  margin: 0 0 6px;
+}
+
+.summary-row--total {
+  border-top: 1px solid var(--color-hairline);
+  margin-top: 8px;
+  padding-top: 16px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 20px;
+}
+
+.empty-cart-wrap {
+  grid-column: 1 / -1;
+  padding: 40px 0;
+}
+
+@media (max-width: 900px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .cart-item {
+    grid-template-columns: 72px 1fr auto;
+    grid-template-areas:
+      'image details remove'
+      'image qty price';
+    row-gap: 10px;
+  }
+
+  .cart-item__image {
+    grid-area: image;
+    width: 72px;
+    height: 88px;
+  }
+
+  .cart-item__details {
+    grid-area: details;
+  }
+
+  .cart-item__unit-price:not(.mobile-only) {
+    display: none;
+  }
+
+  .cart-item__unit-price.mobile-only {
+    display: inline;
+  }
+
+  .cart-item__qty {
+    grid-area: qty;
+  }
+
+  .cart-item__price {
+    grid-area: price;
+    align-items: flex-end;
+  }
+
+  .cart-item__remove {
+    grid-area: remove;
+    justify-self: end;
+  }
+}

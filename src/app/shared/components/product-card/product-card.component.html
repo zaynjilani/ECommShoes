@@ -1,0 +1,44 @@
+<a class="product-card" [routerLink]="['/products', product.id]">
+  <div class="product-card__media">
+    <img [src]="product.imageUrl" [alt]="product.name" loading="lazy" />
+
+    <div class="product-card__badges">
+      <span class="tag tag-new" *ngIf="product.isNewArrival">New</span>
+      <span class="tag tag-sale" *ngIf="discountPercent as pct">-{{ pct }}%</span>
+    </div>
+
+    <button
+      type="button"
+      class="wishlist-btn"
+      [class.is-active]="isWishlisted"
+      (click)="toggleWishlist($event)"
+      [attr.aria-pressed]="isWishlisted"
+      aria-label="Toggle wishlist"
+    >
+      <svg viewBox="0 0 24 24" width="18" height="18" [attr.fill]="isWishlisted ? 'currentColor' : 'none'" stroke="currentColor" stroke-width="2">
+        <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"></path>
+      </svg>
+    </button>
+
+    <div class="product-card__hover-actions">
+      <button type="button" class="btn btn-primary btn-sm btn-block" (click)="addToCart($event)">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+
+  <div class="product-card__info">
+    <span class="product-card__category">{{ product.category }}</span>
+    <h3 class="product-card__name">{{ product.name }}</h3>
+
+    <div class="product-card__price-row">
+      <span class="price">{{ currency }} {{ product.price | number }}</span>
+      <span class="price-compare" *ngIf="product.compareAtPrice">{{ currency }} {{ product.compareAtPrice | number }}</span>
+    </div>
+
+    <div class="product-card__sizes" *ngIf="product.size?.length">
+      <span *ngFor="let s of product.size.slice(0, 4)">{{ s }}</span>
+      <span *ngIf="product.size.length > 4">+{{ product.size.length - 4 }}</span>
+    </div>
+  </div>
+</a>

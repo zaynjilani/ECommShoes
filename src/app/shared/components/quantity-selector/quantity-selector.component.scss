@@ -1,0 +1,48 @@
+.qty-selector {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-hairline-strong);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  height: 44px;
+}
+
+.qty-selector button {
+  width: 40px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  color: var(--color-ink);
+  transition: background-color 0.15s ease;
+}
+
+.qty-selector button:hover:not(:disabled) {
+  background: var(--color-bg-alt);
+}
+
+.qty-selector button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.qty-value {
+  min-width: 34px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.qty-selector--sm {
+  height: 34px;
+}
+
+.qty-selector--sm button {
+  width: 32px;
+  font-size: 1rem;
+}
+
+.qty-selector--sm .qty-value {
+  min-width: 26px;
+  font-size: 0.85rem;
+}

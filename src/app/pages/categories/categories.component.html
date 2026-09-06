@@ -1,0 +1,31 @@
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow">Browse</p>
+    <h1>All Categories</h1>
+    <p>Explore our full range, from everyday wardrobe staples to statement accessories.</p>
+  </div>
+</section>
+
+<section class="section container">
+  <app-loading *ngIf="loading"></app-loading>
+
+  <ng-container *ngIf="!loading">
+    <div class="category-grid" *ngIf="(categoriesWithCounts$ | async) as items; else noCategories">
+      <ng-container *ngIf="items.length; else noCategories">
+        <app-category-card
+          *ngFor="let item of items"
+          [category]="item.category"
+          [productCount]="item.count"
+        ></app-category-card>
+      </ng-container>
+    </div>
+
+    <ng-template #noCategories>
+      <app-empty-state
+        icon="box"
+        title="Categories couldn't be loaded"
+        message="We couldn't reach the category data. Open your browser console for details, or try refreshing the page."
+      ></app-empty-state>
+    </ng-template>
+  </ng-container>
+</section>

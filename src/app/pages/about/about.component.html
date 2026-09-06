@@ -1,0 +1,33 @@
+<section class="about-hero">
+  <div class="container about-hero__inner">
+    <p class="eyebrow">Our story</p>
+    <h1>Modern wardrobes,<br />thoughtfully curated</h1>
+    <p class="about-hero__desc">
+      {{ config.companyName }} was founded on a simple idea: everyday clothing should feel as good as it looks.
+      We hand-pick every piece in our catalog for quality fabric, considered design and lasting comfort.
+    </p>
+  </div>
+</section>
+
+<section class="section container about-values">
+  <div class="section-head">
+    <div class="section-head__text">
+      <p class="eyebrow">What we stand for</p>
+      <h2>Our values</h2>
+    </div>
+  </div>
+
+  <div class="values-grid">
+    <div class="value-card" *ngFor="let v of values">
+      <h3>{{ v.title }}</h3>
+      <p>{{ v.description }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="about-cta">
+  <div class="container about-cta__inner">
+    <h2>Ready to refresh your wardrobe?</h2>
+    <a routerLink="/products" class="btn btn-primary btn-lg">Shop the Collection</a>
+  </div>
+</section>

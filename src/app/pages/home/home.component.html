@@ -1,0 +1,136 @@
+<!-- Hero Banner -->
+<section class="hero">
+  <div
+    class="hero__slide"
+    *ngFor="let slide of banners; let i = index"
+    [class.is-active]="i === activeSlide"
+    [style.backgroundImage]="'linear-gradient(100deg, rgba(23,21,18,0.72) 0%, rgba(23,21,18,0.32) 55%, rgba(23,21,18,0.15) 100%), url(' + slide.imageUrl + ')'"
+  >
+    <div class="container hero__inner">
+      <span class="hero__logo">{{ config.logoText }}</span>
+      <p class="eyebrow hero__eyebrow">{{ slide.eyebrow }}</p>
+      <h1 class="hero__heading">
+        <ng-container *ngFor="let line of slide.heading.split('\n')">{{ line }}<br /></ng-container>
+      </h1>
+      <p class="hero__desc">{{ slide.description }}</p>
+      <div class="hero__ctas" *ngIf="parseLink(slide.ctaLink) as primary">
+        <a class="btn btn-accent btn-lg" [routerLink]="primary.path" [queryParams]="primary.queryParams">{{ slide.ctaLabel }}</a>
+        <a
+          *ngIf="slide.secondaryCtaLabel"
+          class="btn btn-outline-light btn-lg"
+          [routerLink]="parseLink(slide.secondaryCtaLink ?? '/').path"
+          [queryParams]="parseLink(slide.secondaryCtaLink ?? '/').queryParams"
+        >{{ slide.secondaryCtaLabel }}</a>
+      </div>
+    </div>
+  </div>
+
+  <button type="button" class="hero__nav hero__nav--prev" (click)="prevSlide()" aria-label="Previous slide">‹</button>
+  <button type="button" class="hero__nav hero__nav--next" (click)="nextSlide()" aria-label="Next slide">›</button>
+
+  <div class="hero__dots">
+    <button
+      *ngFor="let slide of banners; let i = index"
+      type="button"
+      [class.is-active]="i === activeSlide"
+      (click)="goToSlide(i)"
+      [attr.aria-label]="'Go to slide ' + (i + 1)"
+    ></button>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="section container">
+  <div class="section-head">
+    <div class="section-head__text">
+      <p class="eyebrow">Shop by category</p>
+      <h2>Find your perfect fit</h2>
+    </div>
+    <a routerLink="/categories" class="btn btn-ghost">View all categories</a>
+  </div>
+
+  <div class="category-grid" *ngIf="(categoriesWithCounts$ | async) as items">
+    <app-category-card
+      *ngFor="let item of items.slice(0, 6)"
+      [category]="item.category"
+      [productCount]="item.count"
+    ></app-category-card>
+  </div>
+</section>
+
+<!-- New Arrivals -->
+<section class="section container">
+  <div class="section-head">
+    <div class="section-head__text">
+      <p class="eyebrow">Just landed</p>
+      <h2>New Arrivals</h2>
+    </div>
+    <a [routerLink]="['/products']" [queryParams]="{ category: 'New Arrivals' }" class="btn btn-ghost">View all</a>
+  </div>
+
+  <app-loading *ngIf="loading" [count]="4"></app-loading>
+
+  <div class="product-grid" *ngIf="!loading">
+    <app-product-card
+      *ngFor="let product of (newArrivals$ | async) | slice:0:4"
+      [product]="product"
+    ></app-product-card>
+  </div>
+</section>
+
+<!-- Promotional Banner -->
+<section class="promo-banner">
+  <div class="container promo-banner__inner">
+    <div>
+      <p class="eyebrow">Limited time</p>
+      <h2>End of Season Sale — up to 40% off</h2>
+      <p class="promo-banner__desc">Refresh your wardrobe before prices go back up. Selected styles only, while stock lasts.</p>
+    </div>
+    <a [routerLink]="['/products']" [queryParams]="{ category: 'Sale' }" class="btn btn-primary btn-lg">Shop the Sale</a>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="section container">
+  <div class="section-head">
+    <div class="section-head__text">
+      <p class="eyebrow">Editor's picks</p>
+      <h2>Featured Products</h2>
+    </div>
+    <a routerLink="/products" class="btn btn-ghost">Shop all products</a>
+  </div>
+
+  <app-loading *ngIf="loading"></app-loading>
+
+  <div class="product-grid" *ngIf="!loading">
+    <app-product-card
+      *ngFor="let product of (featuredProducts$ | async) | slice:0:8"
+      [product]="product"
+    ></app-product-card>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section why-us">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-head__text">
+        <p class="eyebrow">Why shop with us</p>
+        <h2>Built around a better experience</h2>
+      </div>
+    </div>
+
+    <div class="benefits-grid">
+      <div class="benefit-card" *ngFor="let benefit of benefits">
+        <div class="benefit-card__icon">
+          <svg *ngIf="benefit.icon === 'truck'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="1" y="6" width="15" height="12"></rect><path d="M16 10h4l3 3v5h-7z"></path><circle cx="6" cy="20" r="2"></circle><circle cx="18" cy="20" r="2"></circle></svg>
+          <svg *ngIf="benefit.icon === 'chat'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          <svg *ngIf="benefit.icon === 'shield'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5z"></path><path d="M9 12l2 2 4-4"></path></svg>
+          <svg *ngIf="benefit.icon === 'refresh'" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 4v6h-6"></path><path d="M1 20v-6h6"></path><path d="M3.5 9a9 9 0 0 1 15-4.4L23 10"></path><path d="M20.5 15a9 9 0 0 1-15 4.4L1 14"></path></svg>
+        </div>
+        <h3>{{ benefit.title }}</h3>
+        <p>{{ benefit.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>

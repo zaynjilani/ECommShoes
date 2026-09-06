@@ -1,0 +1,22 @@
+.not-found {
+  text-align: center;
+  padding: 110px 24px;
+}
+
+.not-found__code {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 5.5rem;
+  color: var(--color-brass-light);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.not-found h1 {
+  margin-bottom: 8px;
+}
+
+.not-found p {
+  margin-bottom: 26px;
+  color: var(--color-ink-muted);
+}

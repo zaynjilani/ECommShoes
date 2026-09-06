@@ -1,0 +1,226 @@
+:host {
+  display: block;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid transparent;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.site-header.is-scrolled {
+  background: rgba(250, 248, 242, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom-color: var(--color-hairline);
+  box-shadow: var(--shadow-soft);
+}
+
+.announce-bar {
+  background: var(--color-ink);
+  color: var(--color-ink-inverse);
+
+  p {
+    margin: 0;
+    text-align: center;
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    padding: 8px 12px;
+  }
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-ink);
+  color: var(--color-ink-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  a {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--color-ink-soft);
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.15s ease;
+  }
+
+  a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--color-brass);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+
+  a:hover {
+    color: var(--color-ink);
+  }
+
+  a:hover::after,
+  a.active::after {
+    transform: scaleX(1);
+  }
+
+  a.active {
+    color: var(--color-ink);
+  }
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--color-ink);
+  transition: background-color 0.15s ease;
+}
+
+.icon-btn:hover {
+  background: var(--color-bg-alt);
+}
+
+.cart-count {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: var(--color-brass);
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger {
+  display: none;
+}
+
+.search-bar {
+  border-top: 1px solid var(--color-hairline);
+  background: var(--color-surface);
+  animation: slideDown 0.18s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.search-bar__inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 24px;
+  color: var(--color-ink-muted);
+
+  input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: var(--color-ink);
+    outline: none;
+  }
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: inline-flex;
+  }
+
+  .mobile-menu {
+    display: block;
+    border-top: 1px solid var(--color-hairline);
+    background: var(--color-surface);
+    animation: slideDown 0.18s ease;
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 24px 20px;
+    }
+
+    a {
+      padding: 13px 0;
+      border-bottom: 1px solid var(--color-hairline);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--color-ink-soft);
+    }
+
+    a.active {
+      color: var(--color-brass-dark);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-name {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,71 @@
+<section class="page-header">
+  <div class="container">
+    <p class="eyebrow">Get in touch</p>
+    <h1>Contact Us</h1>
+    <p>Questions about an order or a product? Send us a message and we'll reply on WhatsApp.</p>
+  </div>
+</section>
+
+<section class="container contact-layout">
+  <form class="contact-form card" [formGroup]="contactForm" (ngSubmit)="submit()">
+    <div class="field">
+      <label for="c-name">Your Name *</label>
+      <input
+        id="c-name"
+        type="text"
+        class="input"
+        [class.invalid]="f.name.invalid && f.name.touched"
+        formControlName="name"
+        placeholder="Full name"
+      />
+      <span class="error-text" *ngIf="f.name.invalid && f.name.touched">Please enter your name.</span>
+    </div>
+
+    <div class="field">
+      <label for="c-email">Email *</label>
+      <input
+        id="c-email"
+        type="email"
+        class="input"
+        [class.invalid]="f.email.invalid && f.email.touched"
+        formControlName="email"
+        placeholder="you@example.com"
+      />
+      <span class="error-text" *ngIf="f.email.invalid && f.email.touched">Please enter a valid email.</span>
+    </div>
+
+    <div class="field">
+      <label for="c-message">Message *</label>
+      <textarea
+        id="c-message"
+        class="textarea"
+        rows="5"
+        [class.invalid]="f.message.invalid && f.message.touched"
+        formControlName="message"
+        placeholder="How can we help?"
+      ></textarea>
+      <span class="error-text" *ngIf="f.message.invalid && f.message.touched">Please enter a message (min. 10 characters).</span>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Send via WhatsApp</button>
+  </form>
+
+  <aside class="contact-info">
+    <div class="contact-info__item">
+      <h4>Visit Us</h4>
+      <p>{{ config.address }}</p>
+    </div>
+    <div class="contact-info__item">
+      <h4>Call / WhatsApp</h4>
+      <p>{{ config.supportPhoneDisplay }}</p>
+    </div>
+    <div class="contact-info__item">
+      <h4>Email</h4>
+      <p>{{ config.supportEmail }}</p>
+    </div>
+    <div class="contact-info__item">
+      <h4>Hours</h4>
+      <p>Monday – Saturday, 10am – 8pm</p>
+    </div>
+  </aside>
+</section>

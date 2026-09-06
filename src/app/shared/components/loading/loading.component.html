@@ -1,0 +1,11 @@
+<div class="skeleton-grid" *ngIf="variant === 'grid'">
+  <div class="skeleton-card" *ngFor="let i of items">
+    <div class="skeleton-shimmer skeleton-image"></div>
+    <div class="skeleton-shimmer skeleton-line skeleton-line--short"></div>
+    <div class="skeleton-shimmer skeleton-line skeleton-line--long"></div>
+  </div>
+</div>
+
+<div class="spinner-wrap" *ngIf="variant === 'spinner'">
+  <div class="spinner" role="status" aria-label="Loading"></div>
+</div>

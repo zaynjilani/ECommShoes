@@ -1,0 +1,10 @@
+<a class="category-card" [routerLink]="['/products']" [queryParams]="{ category: category.name }">
+  <div class="category-card__media">
+    <img [src]="category.imageUrl" [alt]="category.name" loading="lazy" />
+    <div class="category-card__overlay"></div>
+  </div>
+  <div class="category-card__content">
+    <h3>{{ category.name }}</h3>
+    <span>{{ productCount }} {{ productCount === 1 ? 'item' : 'items' }}</span>
+  </div>
+</a>
