@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, catchError, filter, map, of, shareReplay, take, tap } from 'rxjs';
 import { Product } from '../models/product.model';
 
-const STORAGE_KEY = 'luxe_products_v1';
+const STORAGE_KEY = 'Js Kics & Co_products_v1';
 
 /**
  * ProductService is the single source of truth for product data on the

@@ -4,7 +4,7 @@ import { CartItem, CartTotals } from '../models/cart-item.model';
 import { Product } from '../models/product.model';
 import { STORE_CONFIG } from '../config/store.config';
 
-const STORAGE_KEY = 'luxe_cart_v1';
+const STORAGE_KEY = 'Js Kics & Co_cart_v1';
 
 /**
  * CartService is the single, centralized owner of shopping-cart state.

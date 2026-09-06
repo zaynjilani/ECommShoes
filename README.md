@@ -1,4 +1,4 @@
-# LUXE — Premium Angular E-Commerce Storefront
+# J's Kics & Co — Premium Angular E-Commerce Storefront
 
 A production-quality, fully responsive e-commerce storefront built with **Angular 18** (standalone components), TypeScript, SCSS, Reactive Forms and RxJS. Product data is served from a static JSON file, the shopping cart and admin edits persist via **LocalStorage**, and checkout completes by handing a formatted order straight to **WhatsApp**.
 
@@ -97,7 +97,7 @@ pattern that's easy to swap for a real backend later:
 
 1. **`ProductService`** loads the base catalog from `assets/data/products.json`.
 2. Any create/update/delete from the **Admin Products** page is merged on top
-   and saved to `localStorage` (`luxe_products_v1`).
+   and saved to `localStorage` (`J's Kics & Co_products_v1`).
 3. On every app load, the service merges LocalStorage over the JSON baseline,
    so your admin edits "stick" between sessions.
 4. **"Reset to Defaults"** in the admin page clears LocalStorage and reloads
@@ -107,7 +107,7 @@ pattern that's easy to swap for a real backend later:
    requires **no changes** in any component that consumes the service.
 
 The shopping cart (`CartService`) works the same way but is always
-LocalStorage-backed (`luxe_cart_v1`) since it's genuinely user/session data —
+LocalStorage-backed (`J's Kics & Co_cart_v1`) since it's genuinely user/session data —
 this is what makes the cart survive route navigation and page refreshes.
 
 ## 💬 WhatsApp Ordering
@@ -120,7 +120,7 @@ On checkout, `WhatsappService`:
 3. URL-encodes the message and opens `https://wa.me/<number>?text=<message>`
    in a new tab.
 4. The cart is cleared **after** WhatsApp has been opened, and the order is
-   also cached in `localStorage` (`luxe_last_order`) so the success page
+   also cached in `localStorage` (`J's Kics & Co_last_order`) so the success page
    still renders correctly even after a refresh.
 
 The WhatsApp number is read from `STORE_CONFIG.whatsappNumber` everywhere —

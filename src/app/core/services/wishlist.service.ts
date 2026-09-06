@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-const STORAGE_KEY = 'luxe_wishlist_v1';
+const STORAGE_KEY = 'Js Kics & Co_wishlist_v1';
 
 @Injectable({ providedIn: 'root' })
 export class WishlistService {

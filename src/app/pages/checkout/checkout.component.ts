@@ -95,7 +95,7 @@ export class CheckoutComponent implements OnInit {
 
     // Persist the order so the success page can render it even after a refresh.
     try {
-      localStorage.setItem('luxe_last_order', JSON.stringify(order));
+      localStorage.setItem('Js Kics & Co_last_order', JSON.stringify(order));
     } catch {
       /* ignore storage errors */
     }

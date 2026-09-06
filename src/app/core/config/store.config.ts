@@ -51,12 +51,12 @@ export interface StoreConfig {
 }
 
 export const STORE_CONFIG: StoreConfig = {
-  companyName: 'LUXE',
+  companyName: 'Js Kics & Co',
   tagline: 'Wear your confidence',
-  logoText: 'LUXE',
-  whatsappNumber: '923001234567',
-  supportEmail: 'hello@luxestore.com',
-  supportPhoneDisplay: '+92 300 1234567',
+  logoText: 'Js Kics & Co',
+  whatsappNumber: '923390022140', // international format, digits only
+  supportEmail: 'hello@JsKics&Costore.com',
+  supportPhoneDisplay: '+92 339 002 2140',
   currency: 'Rs.',
   currencyCode: 'PKR',
   deliveryCharges: 300,
@@ -73,13 +73,13 @@ export const STORE_CONFIG: StoreConfig = {
     { label: 'Instagram', url: 'https://instagram.com', icon: 'instagram' },
     { label: 'Facebook', url: 'https://facebook.com', icon: 'facebook' },
     { label: 'TikTok', url: 'https://tiktok.com', icon: 'tiktok' },
-    { label: 'WhatsApp', url: 'https://wa.me/923001234567', icon: 'whatsapp' },
+    { label: 'WhatsApp', url: 'https://wa.me/923390022140', icon: 'whatsapp' },
   ],
   banners: [
     {
       id: 'banner-1',
       eyebrow: 'New Season',
-      heading: 'Autumn Edit\n2026',
+      heading: 'Collections\n2026',
       description:
         'Discover premium essentials crafted for everyday luxury — curated pieces for men, women and kids.',
       ctaLabel: 'Shop Now',
@@ -87,7 +87,7 @@ export const STORE_CONFIG: StoreConfig = {
       secondaryCtaLabel: 'Explore Categories',
       secondaryCtaLink: '/categories',
       imageUrl:
-        'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1600&auto=format&fit=crop',
+        './Banner1.jpg',
     },
     {
       id: 'banner-2',
@@ -99,7 +99,7 @@ export const STORE_CONFIG: StoreConfig = {
       secondaryCtaLabel: 'View Lookbook',
       secondaryCtaLink: '/products',
       imageUrl:
-        'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1600&auto=format&fit=crop',
+        './Banner2.jpg',
     },
     {
       id: 'banner-3',
@@ -109,9 +109,9 @@ export const STORE_CONFIG: StoreConfig = {
       ctaLabel: 'Discover',
       ctaLink: '/products?category=New Arrivals',
       imageUrl:
-        'https://images.unsplash.com/photo-1490114538077-0a7f8cb49891?q=80&w=1600&auto=format&fit=crop',
+        './Banner3.jpg',
     },
   ],
-  newsletterHeading: 'Join the LUXE Club',
+  newsletterHeading: 'Join the Js Kics & Co Club',
   newsletterSubheading: 'Get 10% off your first order plus early access to new drops and private sales.',
 };

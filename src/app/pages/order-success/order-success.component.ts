@@ -22,7 +22,7 @@ export class OrderSuccessComponent implements OnInit {
 
   private readFromStorage(): Order | null {
     try {
-      const raw = localStorage.getItem('luxe_last_order');
+      const raw = localStorage.getItem('Js Kics & Co_last_order');
       return raw ? (JSON.parse(raw) as Order) : null;
     } catch {
       return null;

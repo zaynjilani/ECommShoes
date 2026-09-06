@@ -4,13 +4,13 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./pages/home/home.component').then((m) => m.HomeComponent),
-    title: 'LUXE — Premium Fashion Store',
+    title: 'Js Kics & Co — Premium Fashion Store',
   },
   {
     path: 'products',
     loadComponent: () =>
       import('./pages/products/products.component').then((m) => m.ProductsComponent),
-    title: 'Shop All Products — LUXE',
+    title: 'Shop All Products — Js Kics & Co',
   },
   {
     path: 'products/:id',
@@ -18,24 +18,24 @@ export const routes: Routes = [
       import('./pages/product-details/product-details.component').then(
         (m) => m.ProductDetailsComponent
       ),
-    title: 'Product Details — LUXE',
+    title: 'Product Details — Js Kics & Co',
   },
   {
     path: 'categories',
     loadComponent: () =>
       import('./pages/categories/categories.component').then((m) => m.CategoriesComponent),
-    title: 'Categories — LUXE',
+    title: 'Categories — Js Kics & Co',
   },
   {
     path: 'cart',
     loadComponent: () => import('./pages/cart/cart.component').then((m) => m.CartComponent),
-    title: 'Your Cart — LUXE',
+    title: 'Your Cart — Js Kics & Co',
   },
   {
     path: 'checkout',
     loadComponent: () =>
       import('./pages/checkout/checkout.component').then((m) => m.CheckoutComponent),
-    title: 'Checkout — LUXE',
+    title: 'Checkout — Js Kics & Co',
   },
   {
     path: 'order-success',
@@ -43,18 +43,18 @@ export const routes: Routes = [
       import('./pages/order-success/order-success.component').then(
         (m) => m.OrderSuccessComponent
       ),
-    title: 'Order Placed — LUXE',
+    title: 'Order Placed — Js Kics & Co',
   },
   {
     path: 'about',
     loadComponent: () => import('./pages/about/about.component').then((m) => m.AboutComponent),
-    title: 'About Us — LUXE',
+    title: 'About Us — Js Kics & Co',
   },
   {
     path: 'contact',
     loadComponent: () =>
       import('./pages/contact/contact.component').then((m) => m.ContactComponent),
-    title: 'Contact Us — LUXE',
+    title: 'Contact Us — Js Kics & Co',
   },
   {
     path: 'admin/products',
@@ -68,6 +68,6 @@ export const routes: Routes = [
     path: '**',
     loadComponent: () =>
       import('./pages/not-found/not-found.component').then((m) => m.NotFoundComponent),
-    title: 'Page Not Found — LUXE',
+    title: 'Page Not Found — Js Kics & Co',
   },
 ];
